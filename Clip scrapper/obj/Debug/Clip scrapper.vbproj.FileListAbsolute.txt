@@ -10,3 +10,4 @@ C:\Users\Razvan\source\repos\Clip scrapper\Clip scrapper\obj\Debug\NightScrapper
 C:\Users\Razvan\source\repos\Clip scrapper\Clip scrapper\obj\Debug\NightScrapper.exe
 C:\Users\Razvan\source\repos\Clip scrapper\Clip scrapper\obj\Debug\NightScrapper.xml
 C:\Users\Razvan\source\repos\Clip scrapper\Clip scrapper\obj\Debug\NightScrapper.pdb
+C:\Users\Razvan\source\repos\Clip scrapper\Clip scrapper\obj\Debug\NightScrapper.Form2.resources

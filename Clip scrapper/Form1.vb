@@ -13,6 +13,7 @@ Public Class Form1
         Dim git_scr As String = "https://gist.githubusercontent.com/Far0/d8cb0af2bed0284b00bcd1634f36b1d6/raw"
         Dim git_dwn As String = "https://gist.githubusercontent.com/Far0/581356ead6fa2b813ef7557fc95b9641/raw"
         Dim client As WebClient = New WebClient()
+
         '  cmd.Verb = "runas"
         Dim updaterrn As StreamReader = New StreamReader(client.OpenRead(git_upd), Encoding.UTF8)
         Dim updater As String = updaterrn.ReadToEnd
@@ -40,6 +41,7 @@ Public Class Form1
         Label2.BackColor = Color.Transparent
         Label3.Parent = PictureBox1
         Label3.BackColor = Color.Transparent
+
         Label3.Text = "Versiune aplicație: " & My.Settings.verslocal & Environment.NewLine & "Versiune script-uri: " & My.Settings.verslocal_py
 
 
@@ -110,22 +112,20 @@ Public Class Form1
             Else
                 RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Modulul Xlwt s-a instalat."
             End If
+
             My.Settings.testul_2 = 1
 
-
+            Try
+                My.Computer.FileSystem.DeleteFile("temp_a.txt")
+                My.Computer.FileSystem.DeleteFile("temp_b.txt")
+                My.Computer.FileSystem.DeleteFile("temp_c.txt")
+                My.Computer.FileSystem.DeleteFile("t.txt")
+            Catch ex As Exception
+                RichTextBox1.Text += Environment.NewLine + "[INFO] Nu au fost gasite fisiere temporare."
+            End Try
         Else
             RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Toate modulele necesare sunt instalate deja."
         End If
-
-        Try
-            My.Computer.FileSystem.DeleteFile("temp_a.txt")
-            My.Computer.FileSystem.DeleteFile("temp_b.txt")
-            My.Computer.FileSystem.DeleteFile("temp_c.txt")
-            My.Computer.FileSystem.DeleteFile("t.txt")
-        Catch ex As Exception
-            RichTextBox1.Text += Environment.NewLine + "[INFO] Nu au fost gasite fisiere temporare."
-        End Try
-
 
         If System.IO.File.Exists("scrapper.py") And System.IO.File.Exists("downloader.py") Then
             RichTextBox1.Text += Environment.NewLine + "[STAGE 3] Am găsit cele 2 scripturi python."
@@ -151,6 +151,15 @@ Public Class Form1
         End If
         My.Settings.Save()
         RichTextBox1.Text += Environment.NewLine + "[FINISHED] Am terminat."
+        Timer1.Stop()
+        Label1.Text = "FINISHED"
+        Form2.Show()
+        Me.TopMost = False
+        Label2.Text = "Se închide in..3"
+        Timer2.Start()
+
+        '  Me.WindowState = FormWindowState.Minimized
+        '   Me.ShowInTaskbar = False
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -160,11 +169,31 @@ Public Class Form1
             Label1.Text = Label1.Text + "."
         End If
     End Sub
+    Public Class Timeri
+
+        Public Shared t As Integer = 3
+
+    End Class
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         My.Settings.testul_1 = 0
         My.Settings.testul_2 = 0
         My.Settings.testul_3 = 0
         My.Settings.Save()
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Timeri.t = Timeri.t - 1
+        Label2.Text = Label2.Text + "." & Timeri.t
+        If Timeri.t = 0 Then
+            Me.WindowState = FormWindowState.Minimized
+            Me.ShowInTaskbar = False
+            Timer2.Stop()
+        End If
     End Sub
 End Class
