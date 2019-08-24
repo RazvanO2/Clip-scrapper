@@ -8,6 +8,8 @@ Public Class Form1
         Dim git_py As String = "https://gist.githubusercontent.com/Far0/78beb7eed6c5f9ca51ab0569f53ee320/raw"
         Dim git_app As String = "https://gist.githubusercontent.com/Far0/f7539ccf65cfe3b8f396b8bdd98d7cc6/raw"
         Dim git_upd As String = "https://gist.githubusercontent.com/Far0/6b6c8dc6e614d6416d46f1dc1ff3708f/raw"
+        Dim git_scr As String = "https://gist.githubusercontent.com/Far0/d8cb0af2bed0284b00bcd1634f36b1d6/raw"
+        Dim git_dwn As String = "https://gist.githubusercontent.com/Far0/581356ead6fa2b813ef7557fc95b9641/raw"
         Dim client As WebClient = New WebClient()
 
         Dim updaterrn As StreamReader = New StreamReader(client.OpenRead(git_upd), Encoding.UTF8)
@@ -18,6 +20,12 @@ Public Class Form1
         versn_py.Close()
         Dim versn_app As StreamReader = New StreamReader(client.OpenRead(git_app))
         Dim vers As Double = versn_app.ReadToEnd
+        versn_py.Close()
+        Dim dowwn As StreamReader = New StreamReader(client.OpenRead(git_dwn))
+        Dim down As String = dowwn.ReadToEnd
+        versn_app.Close()
+        Dim sccr As StreamReader = New StreamReader(client.OpenRead(git_scr))
+        Dim scrap As String = sccr.ReadToEnd
         versn_app.Close()
         Label1.Parent = PictureBox1
         Label1.BackColor = Color.Transparent
@@ -53,7 +61,7 @@ Public Class Form1
             RichTextBox1.Text += Environment.NewLine + "[UPDATER] Ai deja ultima versiune de Night Scrapper."
         Else
 
-            MsgBox("Apasă ok pentru a descărca ultima versiune de Night Scrapper", vbExclamation, "Nu ai ultima versiune de Night Scrapper")
+            MsgBox("Apasă ok pentru a descărca ultima versiune de Night Scrapper", vbExclamation, "Nu ai u-ltima versiune de Night Scrapper")
             If System.IO.File.Exists("updater.py") Then
                 fileReader = My.Computer.FileSystem.ReadAllText("updater.py")
                 If Not (updater = fileReader) Then
@@ -78,8 +86,6 @@ Public Class Form1
                 RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Modulul Requests s-a instalat, trecem mai departe."
             End If
 
-
-
             Process.Start("cmd", "/c py -c ""import dpath"" > temp_b.txt")
             Threading.Thread.Sleep(500)
             fileReader = My.Computer.FileSystem.ReadAllText("temp_b.txt")
@@ -100,7 +106,16 @@ Public Class Form1
                 Process.Start("cmd", "/c py -m pip install xlwt")
                 RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Modulul Xlwt s-a instalat, trecem mai departe."
             End If
-            My.Settings.testul_2 = "1"
+            Try
+                My.Computer.FileSystem.DeleteFile("temp_a.txt")
+                My.Computer.FileSystem.DeleteFile("temp_b.txt")
+                My.Computer.FileSystem.DeleteFile("temp_c.txt")
+            Catch ex As Exception
+                RichTextBox1.Text += Environment.NewLine + "[WARNING] Nu au fost gasite fisiere temporare?"
+            End Try
+            My.Settings.testul_2 = 1
+
+
         Else
             RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Toate modulele necesare sunt instalate deja, trecem mai departe."
         End If
@@ -108,12 +123,28 @@ Public Class Form1
 
         If System.IO.File.Exists("scrapper.py") And System.IO.File.Exists("downloader.py") Then
             RichTextBox1.Text += Environment.NewLine + "[STAGE 3] Am găsit cele 2 scripturi python, trecem mai departe."
+            fileReader = My.Computer.FileSystem.ReadAllText("scrapper.py")
+            If Not (scrap = fileReader) Then
+                My.Computer.FileSystem.DeleteFile("scrapper.py")
+                File.WriteAllText("scrapper.py", scrap)
+                RichTextBox1.Text += Environment.NewLine + "[STAGE 3] Scrapper.py s-a updatat."
+
+            End If
+            fileReader = My.Computer.FileSystem.ReadAllText("Downloader.py")
+            If Not (down = fileReader) Then
+                My.Computer.FileSystem.DeleteFile("Downloader.py")
+                File.WriteAllText("downloader.py", down)
+                RichTextBox1.Text += Environment.NewLine + "[STAGE 3] Downloader.py s-a updatat."
+
+            End If
+
         Else
-            RichTextBox1.Text += Environment.NewLine + "[STAGE 3] Nu am găsit cele 2 scripturi python."
-
-
+            RichTextBox1.Text += Environment.NewLine + "[STAGE 3] Nu am găsit cele 2 scripturi python, se descarcă..."
+            File.WriteAllText("downloader.py", down)
+            File.WriteAllText("scrapper.py", scrap)
         End If
-
+        RichTextBox1.Text += Environment.NewLine + "[FINISHED] Am terminat."
+        My.Settings.verslocal_py = vers_py
         My.Settings.Save()
 
     End Sub

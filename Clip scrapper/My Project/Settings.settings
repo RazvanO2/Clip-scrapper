@@ -12,10 +12,10 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="verslocal" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">1.001</Value>
+      <Value Profile="(Default)">1.009</Value>
     </Setting>
     <Setting Name="verslocal_py" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">1.001</Value>
     </Setting>
   </Settings>
 </SettingsFile>

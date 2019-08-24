@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("1.001")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1.009")>  _
         Public Property verslocal() As Double
             Get
                 Return CType(Me("verslocal"),Double)
@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1.001")>  _
         Public Property verslocal_py() As Double
             Get
                 Return CType(Me("verslocal_py"),Double)
