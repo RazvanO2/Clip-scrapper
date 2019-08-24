@@ -106,19 +106,21 @@ Public Class Form1
                 Process.Start("cmd", "/c py -m pip install xlwt")
                 RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Modulul Xlwt s-a instalat, trecem mai departe."
             End If
-            Try
-                My.Computer.FileSystem.DeleteFile("temp_a.txt")
-                My.Computer.FileSystem.DeleteFile("temp_b.txt")
-                My.Computer.FileSystem.DeleteFile("temp_c.txt")
-            Catch ex As Exception
-                RichTextBox1.Text += Environment.NewLine + "[WARNING] Nu au fost gasite fisiere temporare?"
-            End Try
             My.Settings.testul_2 = 1
 
 
         Else
             RichTextBox1.Text += Environment.NewLine + "[STAGE 2] Toate modulele necesare sunt instalate deja, trecem mai departe."
         End If
+
+        Try
+            My.Computer.FileSystem.DeleteFile("temp_a.txt")
+            My.Computer.FileSystem.DeleteFile("temp_b.txt")
+            My.Computer.FileSystem.DeleteFile("temp_c.txt")
+            My.Computer.FileSystem.DeleteFile("t.txt")
+        Catch ex As Exception
+            RichTextBox1.Text += Environment.NewLine + "[INFO] Nu au fost gasite fisiere temporare?"
+        End Try
 
 
         If System.IO.File.Exists("scrapper.py") And System.IO.File.Exists("downloader.py") Then
