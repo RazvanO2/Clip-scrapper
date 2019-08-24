@@ -22,11 +22,6 @@ NightScrapper
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:NightScrapper.My.Resources.Resources._set">
-<summary>
-  Looks up a localized string similar to 0.
-</summary>
-</member>
 <member name="P:NightScrapper.My.Resources.Resources.first_aid_kit">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("1.01")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1.016")>  _
         Public Property verslocal() As Double
             Get
                 Return CType(Me("verslocal"),Double)

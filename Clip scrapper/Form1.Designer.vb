@@ -39,7 +39,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(224, 140)
+        Me.Label1.Location = New System.Drawing.Point(216, 234)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 1
@@ -53,7 +53,7 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(73, 62)
+        Me.Label2.Location = New System.Drawing.Point(85, 142)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(341, 46)
         Me.Label2.TabIndex = 2
@@ -63,10 +63,10 @@ Partial Class Form1
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.InfoText
         Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.RichTextBox1.Location = New System.Drawing.Point(64, 173)
+        Me.RichTextBox1.Location = New System.Drawing.Point(63, 268)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(363, 308)
+        Me.RichTextBox1.Size = New System.Drawing.Size(363, 172)
         Me.RichTextBox1.TabIndex = 3
         Me.RichTextBox1.Text = "Aplicația este în viață"
         '
@@ -93,12 +93,12 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Image = Global.NightScrapper.My.Resources.Resources.first_aid_kit
-        Me.Button1.Location = New System.Drawing.Point(306, 19)
+        Me.Button1.Image = Global.NightScrapper.My.Resources.Resources.giphy
+        Me.Button1.Location = New System.Drawing.Point(406, 9)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Developer"
+        Me.Button1.Text = "RESET"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
@@ -106,14 +106,13 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(493, 493)
-        Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No

@@ -61,15 +61,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 0.
-        '''</summary>
-        Public ReadOnly Property _set() As String
-            Get
-                Return ResourceManager.GetString("_set", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property first_aid_kit() As System.Drawing.Bitmap

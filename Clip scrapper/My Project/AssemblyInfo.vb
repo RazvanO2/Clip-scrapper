@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Clip scrapper")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Clip scrapper")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTitle("NightScrapper")>
+<Assembly: AssemblyDescription("Clip Scrapper for Twitch.tv")>
+<Assembly: AssemblyCompany("Olariu Razvan")>
+<Assembly: AssemblyProduct("NightScrapper")>
+<Assembly: AssemblyCopyright("Olariu Razvan ©  2019")>
+<Assembly: AssemblyTrademark("Olariu Razvan ©  2019")>
 
 <Assembly: ComVisible(False)>
 
