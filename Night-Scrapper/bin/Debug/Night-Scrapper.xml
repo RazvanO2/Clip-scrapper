@@ -54,6 +54,11 @@ Night-Scrapper
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Night_Scrapper.My.Resources.Resources.mik">
+<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member>
 <member name="T:Night_Scrapper.Window1">
 <summary>
 Window1

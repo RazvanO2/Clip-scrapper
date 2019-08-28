@@ -11,11 +11,14 @@
     <Setting Name="testul_3" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="verslocal" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">1.021</Value>
+    <Setting Name="aplicatie" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">1.03</Value>
     </Setting>
-    <Setting Name="verslocal_py" Type="System.Double" Scope="User">
+    <Setting Name="scripturi" Type="System.Double" Scope="User">
       <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BETA" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

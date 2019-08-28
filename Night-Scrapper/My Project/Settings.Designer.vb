@@ -91,25 +91,37 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("1.021")>  _
-    Public Property verslocal() As Double
+     Global.System.Configuration.DefaultSettingValueAttribute("1.03")>  _
+    Public Property aplicatie() As Double
         Get
-            Return CType(Me("verslocal"),Double)
+            Return CType(Me("aplicatie"),Double)
         End Get
         Set
-            Me("verslocal") = value
+            Me("aplicatie") = value
         End Set
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
-    Public Property verslocal_py() As Double
+    Public Property scripturi() As Double
         Get
-            Return CType(Me("verslocal_py"),Double)
+            Return CType(Me("scripturi"),Double)
         End Get
         Set
-            Me("verslocal_py") = value
+            Me("scripturi") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+    Public Property BETA() As Integer
+        Get
+            Return CType(Me("BETA"),Integer)
+        End Get
+        Set
+            Me("BETA") = value
         End Set
     End Property
 End Class

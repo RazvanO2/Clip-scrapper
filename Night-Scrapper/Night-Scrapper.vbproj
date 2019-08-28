@@ -186,5 +186,14 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mickey_Mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mickey Mouse Oh Boy.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mik.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
