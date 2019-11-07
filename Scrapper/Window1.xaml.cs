@@ -23,25 +23,5 @@ namespace Scrapper
         {
             InitializeComponent();
         }
-
-        private void Scrapper_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Scrapper_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
