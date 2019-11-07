@@ -104,7 +104,7 @@ namespace Scrapper
                 if (File.Exists(scripturi_nume[0] + ".py"))
                 {
                     fisier = File.ReadAllText(scripturi_nume[0] + ".py");
-                    if (!(scripturi[0] == fisier))
+                    if (scripturi[0] != fisier)
                     {
                         File.Delete(scripturi_nume[0] + ".py");
                         File.WriteAllText(scripturi_nume[0] + ".py", scripturi[0]);
@@ -120,7 +120,7 @@ namespace Scrapper
                     Close();
                 }
             }
-            if ((Properties.Settings.Default.testul_1==1) & (Properties.Settings.Default.testul_2==0))
+            if ((Properties.Settings.Default.testul_1==1) && (Properties.Settings.Default.testul_2==0))
             {
                 cmd.StartInfo = argument;
                 cmd.Start();
@@ -158,7 +158,7 @@ namespace Scrapper
             {
                 if (File.Exists(locatie + scripturi_nume[i] + ".py")){
                     fisier = File.ReadAllText(locatie + scripturi_nume[i] + ".py");
-                    if (!(fisier == scripturi[i]))
+                    if (fisier != scripturi[i])
                     {
                         File.Delete(locatie + scripturi_nume[i] + ".py");
                         File.WriteAllText(locatie + scripturi_nume[i] + ".py", scripturi[i]);
@@ -182,17 +182,18 @@ namespace Scrapper
                 Button1.Visibility = Visibility.Visible;
             }
             /// string lol = Properties.Settings.Default.aplicatie.ToString();
-            ///  MessageBox.Show(lol);
+            ///  MessageBox.Show(lol);l
         }
-        private void Redeschide_Click(object sender, RoutedEventArgs e)
+        private static void Redeschide_Click(object sender, RoutedEventArgs e)
         {
             Window window = new Window1();
             window.Show();
         }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private static void Button1_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Save();
+            RichTextBox1.AppendText(Environment.NewLine + Properties.Settings.Default.testul_1 + Environment.NewLine + Properties.Settings.Default.testul_2);
             RichTextBox1.AppendText(Environment.NewLine + Properties.Settings.Default.testul_1 + Environment.NewLine + Properties.Settings.Default.testul_2);
         }
     }
