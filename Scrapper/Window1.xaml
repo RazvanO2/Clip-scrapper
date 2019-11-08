@@ -5,26 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scrapper"
         mc:Ignorable="d"
-        Title="Window1" Height="442.479" Width="633.287">
+        Title="Window1" Height="442.479" Width="633.287" Loaded="Streamer_v">
     <Grid>
         <GroupBox Header="Listă cu streameri" Margin="17,10,163,65">
             <RichTextBox x:Name="Cutie" Margin="5,10,4,5" TextChanged="RichTextBox_TextChanged">
-                <FlowDocument>
-                    <Paragraph/>
-                </FlowDocument>
+                <RichTextBox.Resources>
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="0"/>
+                    </Style>
+                </RichTextBox.Resources>
             </RichTextBox>
         </GroupBox>
-        <Button Content="Salvează" Margin="39,0,191,22" Click="Button_Click" RenderTransformOrigin="0.5,0.5" AutomationProperties.HelpText="Salvează lista cu streameri." BorderThickness="1" Height="24" VerticalAlignment="Bottom"/>
-        <Button Content="Downloader" Margin="0,0,20,121" HorizontalAlignment="Right" Width="130" Height="36" VerticalAlignment="Bottom" Click="Button_Click"/>
-        <Button x:Name="Scrapper" Content="Scrapper" Margin="0,0,20,177" HorizontalAlignment="Right" Width="130" Height="36" VerticalAlignment="Bottom" Click="Scrapper_Click_1"/>
-        <GroupBox Header="Listă cu jocuri" Margin="0,10,14,227" HorizontalAlignment="Right" Width="136">
-            <RichTextBox x:Name="Cutie1" Margin="5,10,4,5" TextChanged="RichTextBox_TextChanged">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="Nu funcționează"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
-        </GroupBox>
+        <Button Content="Salvează" Margin="39,0,191,22" Click="Salveaza_Click" RenderTransformOrigin="0.5,0.5" AutomationProperties.HelpText="Salvează lista cu streameri." BorderThickness="1" Height="24" VerticalAlignment="Bottom"/>
+        <Button Content="Downloader" Margin="0,0,20,121" HorizontalAlignment="Right" Width="130" Height="36" VerticalAlignment="Bottom" Click="Downloader_Click"/>
+        <Button Content="Scrapper" Margin="0,0,20,177" HorizontalAlignment="Right" Width="130" Height="36" VerticalAlignment="Bottom" Click="Scrapper_Click"/>
     </Grid>
 </Window>

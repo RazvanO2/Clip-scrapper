@@ -184,16 +184,15 @@ namespace Scrapper
             /// string lol = Properties.Settings.Default.aplicatie.ToString();
             ///  MessageBox.Show(lol);l
         }
-        private static void Redeschide_Click(object sender, RoutedEventArgs e)
+        private void Redeschide_Click(object sender, RoutedEventArgs e)
         {
             Window window = new Window1();
             window.Show();
         }
 
-        private static void Button1_Click(object sender, RoutedEventArgs e)
+        private void Button1_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Save();
-            RichTextBox1.AppendText(Environment.NewLine + Properties.Settings.Default.testul_1 + Environment.NewLine + Properties.Settings.Default.testul_2);
             RichTextBox1.AppendText(Environment.NewLine + Properties.Settings.Default.testul_1 + Environment.NewLine + Properties.Settings.Default.testul_2);
         }
     }
