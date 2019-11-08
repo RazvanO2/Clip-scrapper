@@ -56,18 +56,26 @@ namespace Scrapper
 
         private void Scrapper_Click(object sender, RoutedEventArgs e)
         {
-
+            Process cmd = new Process();
+            ProcessStartInfo argument = new ProcessStartInfo("cmd.exe", "/c cd Resurse && py scrapper.py && pause");
+            cmd.StartInfo = argument;
+            cmd.Start();
+            cmd.WaitForExit();
         }
 
         private void Downloader_Click(object sender, RoutedEventArgs e)
         {
-
+            Process cmd = new Process();
+            ProcessStartInfo argument = new ProcessStartInfo("cmd.exe", "/c cd Resurse && py downloader.py && pause");
+            cmd.StartInfo = argument;
+            cmd.Start();
+            cmd.WaitForExit();
         }
 
         private void Salveaza_Click(object sender, RoutedEventArgs e)
         {
             string final = new TextRange(Cutie.Document.ContentStart, Cutie.Document.ContentEnd).Text;
-            File.WriteAllText("Resurse/salvat.txt", final);
+            File.WriteAllText("Resurse/streamer_list.txt", final);
         }
     }
 }
