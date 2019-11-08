@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
-using System.Net;
-using System.Diagnostics;
 namespace Scrapper
 {
     /// <summary>
@@ -28,30 +16,29 @@ namespace Scrapper
         }
         private void Streamer_v(object sender, RoutedEventArgs e)
         {
-            int a = 0;
-            string fisier;
-            var lines = File.ReadLines("Resurse/streamer_list.txt");
-
-            foreach (var line in lines)
+            if (!File.Exists("Resurse/streamer_list.txt"))
             {
-                if( a == 0)
-                {
-                    Cutie.AppendText(line);
-                    a = 1;
-                }
-                else
-                {
-                    Cutie.AppendText("\r" + line);
-                }
-                
+                File.CreateText("Resurse/streamer_list.txt").Close();
             }
-
-  // Process line
+            var lines = File.ReadLines("Resurse/streamer_list.txt");
+            int a = 0;
+                foreach (var line in lines)
+                {
+                    if (a == 0)
+                    {
+                        Cutie.AppendText(line);
+                        a = 2;
+                    }
+                    else
+                    {
+                        Cutie.AppendText("\r" + line);
+                    }
+                }
         }
 
         private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            ///
         }
 
         private void Scrapper_Click(object sender, RoutedEventArgs e)
