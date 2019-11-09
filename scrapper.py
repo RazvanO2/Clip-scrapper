@@ -30,9 +30,10 @@ workbook.save(filename=timp+"/"+"Excel.xlsx")
 # Folder + excel stuff
 
 etemp = 2
-limita = int(input("Clips perStreamer [Default=5]: ")
+limita = int(input("Clips per Streamer(Enter for default=5):"))
 if limita=="":
     limita=int(5)
+    
 stream_file = open("streamer_list.txt", "r")
 streamer = stream_file.read().splitlines()
 for x in range(len(streamer)):
