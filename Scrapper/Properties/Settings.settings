@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="aplicatie" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">6</Value>
+      <Value Profile="(Default)">1.71</Value>
     </Setting>
     <Setting Name="scripturi" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">7</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="testul_1" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
