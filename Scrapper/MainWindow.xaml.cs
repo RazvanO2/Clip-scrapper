@@ -36,7 +36,7 @@ namespace Scrapper
             ///versiune(0) - script; versiune(1) aplicatie;
             string[] scripturi = new string[3];
             string[] scripturi_nume = { "updater", "scrapper", "downloader" };
-            string[] modul = { "requests", "dpath", "xlwt" };
+            string[] modul = { "requests", "dpath", "openpyxl" };
             string locatie = "Resurse/";
             ProcessStartInfo argument = new ProcessStartInfo("cmd.exe", "/c py -m pip install " + modul[0] + " > " + modul[0] + ".info && py -m pip install " + modul[1] + " > " + modul[1] + ".info && py -m pip install " + modul[2] + " > " + modul[2] + ".info");
             WebClient web = new WebClient();
@@ -179,10 +179,12 @@ namespace Scrapper
             Label3.Content = "Versiune aplicație: " + Properties.Settings.Default.aplicatie + Environment.NewLine + "Versiune script-uri: " + Properties.Settings.Default.scripturi;
             if (Properties.Settings.Default.BETA == 1)
             {
+                Properties.Settings.Default.Save();
                 Button1.Visibility = Visibility.Visible;
             }
-            /// string lol = Properties.Settings.Default.aplicatie.ToString();
-            ///  MessageBox.Show(lol);l
+
+            Window window = new Window1();
+            window.Show();
         }
         private void Redeschide_Click(object sender, RoutedEventArgs e)
         {

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scrapper"
         mc:Ignorable="d"
-        Title="Window1" Height="442.479" Width="633.287" Loaded="Streamer_v">
+        
+        Title="Scrapper" Height="442.479" Width="633.287" Loaded="Streamer_v" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Listă cu streameri" Margin="17,10,163,65">
             <RichTextBox x:Name="Cutie" Margin="5,10,4,5" TextChanged="RichTextBox_TextChanged">
