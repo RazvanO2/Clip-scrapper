@@ -56,15 +56,14 @@ for x in range(len(streamer)):
             vod="Invalid"
             duration=0
             views=0   
-        sheet["B"+ str(etemp)] = streamer[x]
-        sheet["C"+ str(etemp)] = views
-        sheet["D"+ str(etemp)] = duration
         if duration!=0:
+            sheet["B"+ str(etemp)] = streamer[x]
+            sheet["C"+ str(etemp)] = views
+            sheet["D"+ str(etemp)] = duration
             sheet["E"+ str(etemp)] = "=HYPERLINK("+'"'+ vod  +'"'+")"
-        sheet["F"+ str(etemp)] = slug
-        sheet["G"+ str(etemp)] = title
-        sheet
-        f.write(slug+"\n")
+            sheet["F"+ str(etemp)] = slug
+            sheet["G"+ str(etemp)] = title
+            f.write(slug+"\n")
         etemp= etemp+1
 
 workbook.save(filename=timp+"/"+"Excel.xlsx")
