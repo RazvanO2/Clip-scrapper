@@ -59,7 +59,8 @@ for x in range(len(streamer)):
         sheet["B"+ str(etemp)] = streamer[x]
         sheet["C"+ str(etemp)] = views
         sheet["D"+ str(etemp)] = duration
-        sheet["E"+ str(etemp)] = "=HYPERLINK("+'"'+ vod  +'"'+")"
+        if duration!=0:
+            sheet["E"+ str(etemp)] = "=HYPERLINK("+'"'+ vod  +'"'+")"
         sheet["F"+ str(etemp)] = slug
         sheet["G"+ str(etemp)] = title
         sheet
