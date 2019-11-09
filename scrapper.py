@@ -31,9 +31,9 @@ workbook.save(filename=timp+"/"+"Excel.xlsx")
 
 etemp = 2
 try:
-    limita = int(input("Clips per Streamer(Enter for default=5):"))
+    limita = int(input("Clips per Streamer(Enter for default=10):"))
 except:
-    limita = int(5)
+    limita = int(10)
     
 stream_file = open("streamer_list.txt", "r")
 streamer = stream_file.read().splitlines()
