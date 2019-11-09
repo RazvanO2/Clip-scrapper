@@ -30,7 +30,7 @@ namespace Scrapper
         {
             string fisier;
             Process cmd = new Process();
-            string[] linkuri = { "https://gist.githubusercontent.com/Far0/78beb7eed6c5f9ca51ab0569f53ee320/raw", "https://gist.githubusercontent.com/Far0/f7539ccf65cfe3b8f396b8bdd98d7cc6/raw", "https://gist.githubusercontent.com/Far0/6b6c8dc6e614d6416d46f1dc1ff3708f/raw", "https://gist.githubusercontent.com/Far0/d8cb0af2bed0284b00bcd1634f36b1d6/raw", "https://gist.githubusercontent.com/Far0/581356ead6fa2b813ef7557fc95b9641/raw" };
+            string[] linkuri = { "https://raw.githubusercontent.com/Far0/Clip-scrapper/master/script_vers.info", "https://raw.githubusercontent.com/Far0/Clip-scrapper/master/app.info", "https://raw.githubusercontent.com/Far0/Clip-scrapper/master/updater.py", "https://raw.githubusercontent.com/Far0/Clip-scrapper/master/scrapper.py", "https://raw.githubusercontent.com/Far0/Clip-scrapper/master/downloader.py" };
             /// linkuri(0) - versiune script; linkuri(1) - versiune aplicatie; linkuri(2) updater; linkuri(3) scrapper; linkuri(4) downloader
             double[] versiune = new double[2];
             ///versiune(0) - script; versiune(1) aplicatie;
